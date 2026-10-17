@@ -1,0 +1,25 @@
+---
+import CtaButton from "./CtaButton.astro";
+---
+
+<!-- Overlaps the bottom of the previous section with its rounded top -->
+<section class="relative -mt-8 rounded-t-section bg-cobalt lg:-mt-12 lg:rounded-t-section-lg">
+  <div
+    class="mx-auto flex max-w-compact flex-col gap-5.5 px-gutter pt-18 pb-12 lg:max-w-page lg:items-center lg:gap-8 lg:px-gutter-lg lg:pt-35 lg:text-center"
+  >
+    <h2 class="font-serif text-cta font-medium text-balance lg:max-w-heading lg:text-cta-lg">
+      С кем вы давно <em>хотели поговорить?</em>
+    </h2>
+    <p class="text-body text-pretty lg:max-w-cta-text lg:text-body-lg">
+      Начните с нескольких человек, с которыми хочется оставаться на связи. Добавьте их контакты в
+      персональную CRM — и напишите кому-нибудь уже сегодня.
+    </p>
+    <CtaButton class="mt-1.5 lg:mt-2" />
+    <footer
+      class="flex items-center justify-between pt-10 lg:mt-30 lg:self-stretch lg:border-t lg:border-cobalt-line lg:pt-7"
+    >
+      <span class="text-footer font-bold lg:text-footer-lg">Персональная CRM</span>
+      <span class="size-2.5 rounded-full bg-cream" aria-hidden="true"></span>
+    </footer>
+  </div>
+</section>

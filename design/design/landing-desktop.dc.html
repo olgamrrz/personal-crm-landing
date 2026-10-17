@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,500&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#2A5FE8;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:hover{opacity:.9}
+</style>
+</helmet>
+<main style="background:#2A5FE8;color:#F4EEE1;font-family:'Manrope',sans-serif;overflow:hidden">
+
+  <section data-screen-label="01 Первый экран" style="max-width:1320px;margin:0 auto;padding:0 56px;box-sizing:border-box">
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:32px 0">
+      <div style="font-weight:700;font-size:18px;letter-spacing:-.01em">Персональная CRM</div>
+      <a href="#" style="display:flex;align-items:center;gap:10px;height:44px;padding:0 8px 0 20px;border-radius:999px;border:1px solid #F4EEE1;font-weight:700;font-size:14px">Добавить контакты<span style="width:30px;height:30px;border-radius:50%;background:#F4EEE1;color:#2A5FE8;display:flex;align-items:center;justify-content:center">→</span></a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:56px;align-items:center;padding:64px 0 120px">
+      <div style="display:flex;flex-direction:column;gap:32px">
+        <h1 style="margin:0;font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(48px,6vw,88px);line-height:1;letter-spacing:-.025em;text-wrap:balance">Важные люди — рядом, <span style="font-style:italic">даже когда жизнь загружена</span></h1>
+        <p style="margin:0;max-width:520px;font-size:19px;line-height:1.55;text-wrap:pretty">Персональная CRM собирает контакты друзей и знакомых в одном месте, чтобы вам было проще находить друг друга, договариваться о встречах и оставаться на связи.</p>
+        <a href="#" style="align-self:flex-start;display:flex;gap:40px;justify-content:space-between;align-items:center;height:64px;padding:0 10px 0 30px;border-radius:999px;background:#F4EEE1;color:#1C3FA8;font-weight:700;font-size:17px">Добавить контакты<span style="width:46px;height:46px;border-radius:50%;background:#2A5FE8;color:#F4EEE1;display:flex;align-items:center;justify-content:center;font-size:20px">→</span></a>
+      </div>
+      <div style="position:relative;height:440px;max-width:520px;width:100%;justify-self:center">
+        <div style="position:absolute;left:60px;right:20px;top:40px;height:110px;border-radius:28px;background:#1C3FA8;transform:rotate(-5deg);display:flex;align-items:center;padding:0 32px">
+          <div style="display:flex;flex-direction:column;gap:6px"><div style="font-weight:700;font-size:20px">Лена</div><div style="font-size:16px;color:#C9D4F7">Подруга · сходить на выставку</div></div>
+        </div>
+        <div style="position:absolute;left:10px;right:70px;top:160px;height:110px;border-radius:28px;background:#F4EEE1;color:#1C3FA8;transform:rotate(3deg);display:flex;align-items:center;padding:0 32px">
+          <div style="display:flex;flex-direction:column;gap:6px"><div style="font-weight:700;font-size:20px">Дима</div><div style="font-size:16px;color:#3E5BB5">Бывший коллега · кофе</div></div>
+        </div>
+        <div style="position:absolute;left:50px;right:0;top:280px;height:110px;border-radius:28px;background:#0F2A7A;transform:rotate(-2deg);display:flex;align-items:center;padding:0 32px">
+          <div style="display:flex;flex-direction:column;gap:6px"><div style="font-weight:700;font-size:20px">Марк</div><div style="font-size:16px;color:#C9D4F7">Познакомились на мероприятии</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="02 Проблема" style="background:#F4EEE1;color:#1C3FA8;border-radius:48px 48px 0 0">
+    <div style="max-width:1320px;margin:0 auto;padding:112px 56px;box-sizing:border-box;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:56px 80px">
+      <h2 style="margin:0;font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(38px,4.4vw,64px);line-height:1.04;letter-spacing:-.02em;text-wrap:balance"><span style="font-style:italic">«Надо бы написать»</span> — и снова проходит месяц</h2>
+      <div style="display:flex;flex-direction:column;gap:28px;padding-top:12px">
+        <p style="margin:0;font-size:19px;line-height:1.6;color:#1F3A94;text-wrap:pretty">С подругой давно собирались встретиться. С бывшим коллегой — выпить кофе. На мероприятии познакомились с интересным человеком, но его контакт затерялся среди переписок.</p>
+        <div style="height:1px;background:#C8CDE6"></div>
+        <p style="margin:0;font-size:19px;line-height:1.6;color:#1F3A94;text-wrap:pretty">Работа, дела и повседневные заботы забирают внимание. А общение с людьми, которым вы рады, всё чаще откладывается на потом.</p>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="03 Решение" style="background:#2A5FE8">
+    <div style="max-width:1320px;margin:0 auto;padding:120px 56px;box-sizing:border-box;display:flex;flex-direction:column;gap:48px">
+      <h2 style="margin:0;max-width:900px;font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(38px,4.4vw,64px);line-height:1.04;letter-spacing:-.02em;text-wrap:balance">Одно место <span style="font-style:italic">для вашего круга общения</span></h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:32px 80px;align-items:start">
+        <p style="margin:0;font-size:26px;line-height:1.4;font-weight:500;text-wrap:pretty">Соберите контакты друзей, знакомых и коллег в персональной CRM.</p>
+        <div style="background:#1C3FA8;border-radius:32px;padding:36px 40px">
+          <p style="margin:0;font-size:19px;line-height:1.6;color:#E3E8FA;text-wrap:pretty">Откройте её, когда захотите позвать кого-нибудь на выставку, написать старому другу или продолжить знакомство после мероприятия. Нужный контакт будет под рукой — без поисков по разным приложениям.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="04 Выгоды" style="background:#F4EEE1;color:#1C3FA8;border-radius:48px 48px 0 0">
+    <div style="max-width:1320px;margin:0 auto;padding:112px 56px 160px;box-sizing:border-box;display:flex;flex-direction:column;gap:56px">
+      <h2 style="margin:0;font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(38px,4.4vw,64px);line-height:1.04;letter-spacing:-.02em;text-wrap:balance">Больше поводов <span style="font-style:italic">быть на связи</span></h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:20px">
+        <div style="background:#2A5FE8;color:#F4EEE1;border-radius:28px;padding:32px 28px;min-height:240px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between;gap:20px;transform:rotate(-1.5deg)">
+          <h3 style="margin:0;font-size:22px;line-height:1.25;font-weight:700;letter-spacing:-.01em">Проще вернуться к общению</h3>
+          <p style="margin:0;font-size:16px;line-height:1.55;color:#E3E8FA;text-wrap:pretty">Найдите контакт человека, с которым давно хотели поговорить, и сделайте первый шаг.</p>
+        </div>
+        <div style="background:#FFFFFF;border-radius:28px;padding:32px 28px;min-height:240px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between;gap:20px;transform:rotate(1deg) translateY(16px)">
+          <h3 style="margin:0;font-size:22px;line-height:1.25;font-weight:700;letter-spacing:-.01em">Легче собрать компанию</h3>
+          <p style="margin:0;font-size:16px;line-height:1.55;color:#1F3A94;text-wrap:pretty">Решили сходить в кино, погулять или выпить кофе? Загляните в свой круг контактов и выберите, кого позвать.</p>
+        </div>
+        <div style="background:#0F2A7A;color:#F4EEE1;border-radius:28px;padding:32px 28px;min-height:240px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between;gap:20px;transform:rotate(-1deg)">
+          <h3 style="margin:0;font-size:22px;line-height:1.25;font-weight:700;letter-spacing:-.01em">Больше продолжений у новых знакомств</h3>
+          <p style="margin:0;font-size:16px;line-height:1.55;color:#E3E8FA;text-wrap:pretty">Сохраните контакт после встречи, чтобы интересный разговор мог продолжиться.</p>
+        </div>
+        <div style="background:#FFFFFF;border-radius:28px;padding:32px 28px;min-height:240px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between;gap:20px;transform:rotate(1.5deg) translateY(16px)">
+          <h3 style="margin:0;font-size:22px;line-height:1.25;font-weight:700;letter-spacing:-.01em">Ваш круг общения перед глазами</h3>
+          <p style="margin:0;font-size:16px;line-height:1.55;color:#1F3A94;text-wrap:pretty">Друзья из разных городов, бывшие коллеги, знакомые по увлечениям — все в одном месте.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="05 Призыв к действию" style="background:#2A5FE8;border-radius:48px 48px 0 0;margin-top:-48px;position:relative">
+    <div style="max-width:1320px;margin:0 auto;padding:140px 56px 48px;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;text-align:center;gap:32px">
+      <h2 style="margin:0;max-width:900px;font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(44px,6vw,88px);line-height:1;letter-spacing:-.025em;text-wrap:balance">С кем вы давно <span style="font-style:italic">хотели поговорить?</span></h2>
+      <p style="margin:0;max-width:620px;font-size:19px;line-height:1.6;text-wrap:pretty">Начните с нескольких человек, с которыми хочется оставаться на связи. Добавьте их контакты в персональную CRM — и напишите кому-нибудь уже сегодня.</p>
+      <a href="#" style="margin-top:8px;display:flex;gap:40px;justify-content:space-between;align-items:center;height:64px;padding:0 10px 0 30px;border-radius:999px;background:#F4EEE1;color:#1C3FA8;font-weight:700;font-size:17px">Добавить контакты<span style="width:46px;height:46px;border-radius:50%;background:#2A5FE8;color:#F4EEE1;display:flex;align-items:center;justify-content:center;font-size:20px">→</span></a>
+      <div style="align-self:stretch;display:flex;justify-content:space-between;align-items:center;margin-top:120px;padding-top:28px;border-top:1px solid #4F7BF2">
+        <div style="font-weight:700;font-size:15px">Персональная CRM</div>
+        <div style="width:10px;height:10px;border-radius:50%;background:#F4EEE1"></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+</x-dc>
+</body>
+</html>

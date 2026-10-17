@@ -1,0 +1,23 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Problem from "../components/Problem.astro";
+import Solution from "../components/Solution.astro";
+import Benefits from "../components/Benefits.astro";
+import FinalCta from "../components/FinalCta.astro";
+---
+
+<Base
+  title="Важные люди — рядом, даже когда жизнь загружена"
+  description="Персональная CRM собирает контакты друзей и знакомых в одном месте, чтобы вам было проще находить друг друга, договариваться о встречах и оставаться на связи."
+>
+  <Header />
+  <main class="overflow-hidden">
+    <Hero />
+    <Problem />
+    <Solution />
+    <Benefits />
+    <FinalCta />
+  </main>
+</Base>

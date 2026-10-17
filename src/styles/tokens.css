@@ -1,0 +1,134 @@
+/*
+ * Design tokens: the only place for colors, fonts, type sizes, spacing and radii.
+ * Values come from design/README.md. Utilities: bg-cobalt, text-h1, px-gutter, rounded-t-section...
+ */
+@theme {
+  /* Drop Tailwind's default palette and fonts: only design values are allowed */
+  --color-*: initial;
+  --font-*: initial;
+
+  /* Colors */
+  --color-cobalt: #2a5fe8; /* main background, blue sections */
+  --color-cobalt-700: #1c3fa8; /* text on cream, cards, arrow circle */
+  --color-cobalt-900: #0f2a7a; /* dark cards */
+  --color-cobalt-ink: #1f3a94; /* paragraph text on cream */
+  --color-cobalt-soft: #3e5bb5; /* secondary text on cream */
+  --color-cobalt-line: #4f7bf2; /* rule above the footer */
+  --color-cream: #f4eee1; /* light sections, text on blue, button */
+  --color-cream-line: #c8cde6; /* divider on cream */
+  --color-mist: #c9d4f7; /* secondary text on blue */
+  --color-mist-100: #e3e8fa; /* paragraph text inside dark panels */
+  --color-white: #ffffff; /* light benefit cards */
+
+  /* Fonts */
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Manrope", system-ui, sans-serif;
+
+  /* Type scale: size + line height + letter spacing. "-lg" = desktop */
+  --text-h1: 47px;
+  --text-h1--line-height: 1.02;
+  --text-h1--letter-spacing: -0.02em;
+  --text-h1-lg: clamp(48px, 6vw, 88px);
+  --text-h1-lg--line-height: 1;
+  --text-h1-lg--letter-spacing: -0.025em;
+
+  --text-h2: 38px;
+  --text-h2--line-height: 1.05;
+  --text-h2--letter-spacing: -0.02em;
+  --text-h2-lg: clamp(38px, 4.4vw, 64px);
+  --text-h2-lg--line-height: 1.04;
+  --text-h2-lg--letter-spacing: -0.02em;
+
+  --text-cta: 44px;
+  --text-cta--line-height: 1.02;
+  --text-cta--letter-spacing: -0.02em;
+  --text-cta-lg: clamp(44px, 6vw, 88px);
+  --text-cta-lg--line-height: 1;
+  --text-cta-lg--letter-spacing: -0.025em;
+
+  --text-intro: 16px; /* hero paragraph */
+  --text-intro--line-height: 1.5;
+  --text-intro-lg: 19px;
+  --text-intro-lg--line-height: 1.55;
+
+  --text-body: 16px;
+  --text-body--line-height: 1.55;
+  --text-body-lg: 19px;
+  --text-body-lg--line-height: 1.6;
+
+  --text-lead: 18px;
+  --text-lead--line-height: 1.5;
+  --text-lead-lg: 26px;
+  --text-lead-lg--line-height: 1.4;
+
+  --text-card-title: 19px;
+  --text-card-title--line-height: normal;
+  --text-card-title--letter-spacing: -0.01em;
+  --text-card-title-lg: 22px;
+  --text-card-title-lg--line-height: 1.25;
+  --text-card-title-lg--letter-spacing: -0.01em;
+
+  --text-card: 15px;
+  --text-card--line-height: 1.5;
+  --text-card-lg: 16px;
+  --text-card-lg--line-height: 1.55;
+
+  --text-person-name: 15px;
+  --text-person-name--line-height: normal;
+  --text-person-name-lg: 20px;
+  --text-person-name-lg--line-height: normal;
+
+  --text-person-note: 13px;
+  --text-person-note--line-height: normal;
+  --text-person-note-lg: 16px;
+  --text-person-note-lg--line-height: normal;
+
+  --text-logo: 15px;
+  --text-logo--line-height: normal;
+  --text-logo--letter-spacing: -0.01em;
+  --text-logo-lg: 18px;
+  --text-logo-lg--line-height: normal;
+  --text-logo-lg--letter-spacing: -0.01em;
+
+  --text-footer: 13px;
+  --text-footer--line-height: normal;
+  --text-footer-lg: 15px;
+  --text-footer-lg--line-height: normal;
+
+  --text-button: 16px;
+  --text-button--line-height: normal;
+  --text-button-lg: 17px;
+  --text-button-lg--line-height: normal;
+  --text-button-sm: 14px; /* header button */
+  --text-button-sm--line-height: normal;
+
+  --text-arrow: 18px;
+  --text-arrow--line-height: normal;
+  --text-arrow-lg: 20px;
+  --text-arrow-lg--line-height: normal;
+
+  /* Spacing: base step is 4px, so p-1 = 4px, p-5.5 = 22px, p-14 = 56px */
+  --spacing: 0.25rem;
+  --spacing-gutter: 24px; /* side padding, mobile */
+  --spacing-gutter-lg: 56px; /* side padding, desktop */
+  --spacing-header: 65px; /* mobile header height: 22px + 21px logo line + 22px */
+
+  /* Content widths */
+  --container-page: 1320px; /* desktop container, side padding included */
+  --container-compact: 608px; /* mobile layout on tablets: 560px of content + gutters */
+  --container-hero-text: 520px;
+  --container-hero-cards: 520px;
+  --container-hero-cards-sm: 420px; /* mobile layout: keeps tilted cards from overlapping on tablets */
+  --container-heading: 900px;
+  --container-cta-text: 620px;
+
+  /* Radii */
+  --radius-section: 32px; /* top corners of cream sections and final CTA */
+  --radius-section-lg: 48px;
+  --radius-person: 22px; /* contact cards in hero */
+  --radius-person-lg: 28px;
+  --radius-benefit: 24px;
+  --radius-benefit-lg: 28px;
+  --radius-panel: 24px; /* panel in "Solution" */
+  --radius-panel-lg: 32px;
+}

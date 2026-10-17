@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@import "./tokens.css";
+
+@layer base {
+  /* The design relies on the font's natural line height wherever none is set */
+  html {
+    line-height: normal;
+  }
+}

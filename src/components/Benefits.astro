@@ -1,0 +1,57 @@
+---
+// Benefit cards: colors and tilt per card; even cards shift down on desktop
+// (shift goes into `transform` so it applies after the tilt, as in the design).
+const benefits = [
+  {
+    title: "Проще вернуться к общению",
+    text: "Найдите контакт человека, с которым давно хотели поговорить, и сделайте первый шаг.",
+    class: "-rotate-[1.5deg] bg-cobalt text-cream",
+    textClass: "text-mist-100",
+  },
+  {
+    title: "Легче собрать компанию",
+    text: "Решили сходить в кино, погулять или выпить кофе? Загляните в свой круг контактов и выберите, кого позвать.",
+    class: "rotate-1 bg-white lg:transform-[translateY(--spacing(4))]",
+    textClass: "text-cobalt-ink",
+  },
+  {
+    title: "Больше продолжений у новых знакомств",
+    text: "Сохраните контакт после встречи, чтобы интересный разговор мог продолжиться.",
+    class: "-rotate-1 bg-cobalt-900 text-cream",
+    textClass: "text-mist-100",
+  },
+  {
+    title: "Ваш круг общения перед глазами",
+    text: "Друзья из разных городов, бывшие коллеги, знакомые по увлечениям — все в одном месте.",
+    class: "rotate-[1.5deg] bg-white lg:transform-[translateY(--spacing(4))]",
+    textClass: "text-cobalt-ink",
+  },
+];
+---
+
+<section class="rounded-t-section bg-cream text-cobalt-700 lg:rounded-t-section-lg">
+  <div
+    class="mx-auto flex max-w-compact flex-col gap-7 px-gutter pt-14 pb-16 lg:max-w-page lg:gap-14 lg:px-gutter-lg lg:pt-28 lg:pb-40"
+  >
+    <h2 class="font-serif text-h2 font-medium text-balance lg:text-h2-lg">
+      Больше поводов <em>быть на связи</em>
+    </h2>
+    <ul class="flex flex-col gap-3 lg:grid lg:grid-cols-4 lg:gap-5">
+      {
+        benefits.map((benefit) => (
+          <li
+            class:list={[
+              "flex flex-col gap-2.5 rounded-benefit p-5.5 lg:min-h-60 lg:justify-between lg:gap-5 lg:rounded-benefit-lg lg:px-7 lg:py-8",
+              benefit.class,
+            ]}
+          >
+            <h3 class="text-card-title font-bold lg:text-card-title-lg">{benefit.title}</h3>
+            <p class:list={["text-card text-pretty lg:text-card-lg", benefit.textClass]}>
+              {benefit.text}
+            </p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

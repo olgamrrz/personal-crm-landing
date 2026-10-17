@@ -1,0 +1,23 @@
+---
+import ContactCards from "./ContactCards.astro";
+import CtaButton from "./CtaButton.astro";
+---
+
+<!-- On mobile the header and this section fill exactly one screen -->
+<section class="flex min-h-[calc(100svh-var(--spacing-header))] flex-col lg:block lg:min-h-0">
+  <div
+    class="mx-auto flex w-full max-w-compact flex-1 flex-col lg:grid lg:max-w-page lg:grid-cols-2 lg:items-center lg:gap-14 lg:px-gutter-lg lg:pt-16 lg:pb-30"
+  >
+    <div class="flex flex-col gap-5 px-gutter pt-5 lg:gap-8 lg:p-0">
+      <h1 class="font-serif text-h1 font-medium text-balance lg:text-h1-lg">
+        Важные люди — рядом, <em>даже когда жизнь загружена</em>
+      </h1>
+      <p class="text-intro text-pretty lg:max-w-hero-text lg:text-intro-lg">
+        Персональная CRM собирает контакты друзей и знакомых в одном месте, чтобы вам было проще
+        находить друг друга, договариваться о встречах и оставаться на связи.
+      </p>
+      <CtaButton class="lg:self-start" />
+    </div>
+    <ContactCards />
+  </div>
+</section>

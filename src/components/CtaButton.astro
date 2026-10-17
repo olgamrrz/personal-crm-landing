@@ -1,0 +1,53 @@
+---
+import { APP_URL } from "../config";
+
+interface Props {
+  /** md: compact outline button in the desktop header; lg: main cream button */
+  size?: "md" | "lg";
+  href?: string;
+  class?: string;
+}
+
+const { size = "lg", href = APP_URL, class: className } = Astro.props;
+
+const interaction =
+  "hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-cream";
+---
+
+{
+  size === "md" ? (
+    <a
+      href={href}
+      class:list={[
+        "box-content flex h-11 items-center gap-2.5 rounded-full border border-cream pr-2 pl-5 text-button-sm font-bold",
+        interaction,
+        className,
+      ]}
+    >
+      Добавить контакты
+      <span
+        class="flex size-7.5 items-center justify-center rounded-full bg-cream text-cobalt"
+        aria-hidden="true"
+      >
+        →
+      </span>
+    </a>
+  ) : (
+    <a
+      href={href}
+      class:list={[
+        "flex h-14.5 items-center justify-between rounded-full bg-cream pr-2.5 pl-6.5 text-button font-bold text-cobalt-700 lg:h-16 lg:gap-10 lg:pl-7.5 lg:text-button-lg",
+        interaction,
+        className,
+      ]}
+    >
+      Добавить контакты
+      <span
+        class="flex size-10 items-center justify-center rounded-full bg-cobalt text-arrow text-cream lg:size-11.5 lg:text-arrow-lg"
+        aria-hidden="true"
+      >
+        →
+      </span>
+    </a>
+  )
+}
