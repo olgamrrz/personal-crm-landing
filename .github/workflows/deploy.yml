@@ -1,0 +1,64 @@
+# Push to main -> build dist/ -> rsync --delete into /var/www/landing -> nginx serves it -> home page must answer 200.
+# No staging and no rollback: if something breaks, fix it and push a new version.
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# One deploy at a time; a newer push waits for the running upload instead of cutting it off
+concurrency:
+  group: deploy-landing
+  cancel-in-progress: false
+
+env:
+  SERVER: crmapp@176.12.67.9
+  SITE_URL: https://olgamrzvcrm.ru
+
+jobs:
+  deploy:
+    name: Build and deploy
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: pnpm/action-setup@v6
+        with:
+          version: 12.10.1
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm build
+
+      # Lets anyone check which commit is live: https://olgamrzvcrm.ru/version.txt
+      - name: Stamp version
+        run: printf '%s\n' "$GITHUB_SHA" > dist/version.txt
+
+      - name: Set up SSH
+        env:
+          SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          KNOWN_HOSTS: ${{ vars.DEPLOY_KNOWN_HOSTS }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+
+      # The deploy key is locked to rrsync in /var/www/landing, so the remote path is relative to that folder
+      - name: Upload dist/ to the server
+        run: rsync -rlt --chmod=D755,F644 --delete-delay --delay-updates -e "ssh -o BatchMode=yes" dist/ "$SERVER:"
+
+      - name: Check home page answers 200 with the new version
+        run: |
+          curl --fail --silent --show-error --retry 5 --retry-all-errors --retry-delay 3 -o /dev/null -w 'home page: %{http_code}\n' "$SITE_URL/"
+          live=$(curl --fail --silent --show-error --retry 5 --retry-all-errors --retry-delay 3 "$SITE_URL/version.txt")
+          echo "live version: $live"
+          test "$live" = "$GITHUB_SHA"
